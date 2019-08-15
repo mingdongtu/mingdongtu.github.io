@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019 | Hexo</title>
+  <title>如何从零搭建一个Vue项目 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  <meta name="description" content="利用vue-cli 2.X搭建一个基本可以运行的项目；vue-router建立路由；引入异步请求插件 vue-axios;引入状态管理插件vuex；处理移动适配；组件注册；一、项目结构：1、对项目不同文件部分做一个介绍；├─build                         // webpack开发打包相关配置 │ ├─build.js                        //">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何从零搭建一个Vue项目">
+<meta property="og:url" content="http://yoursite.com/2019/07/30/如何从零搭建一个Vue项目/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="利用vue-cli 2.X搭建一个基本可以运行的项目；vue-router建立路由；引入异步请求插件 vue-axios;引入状态管理插件vuex；处理移动适配；组件注册；一、项目结构：1、对项目不同文件部分做一个介绍；├─build                         // webpack开发打包相关配置 │ ├─build.js                        //">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-15T02:52:46.689Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="如何从零搭建一个Vue项目">
+<meta name="twitter:description" content="利用vue-cli 2.X搭建一个基本可以运行的项目；vue-router建立路由；引入异步请求插件 vue-axios;引入状态管理插件vuex；处理移动适配；组件注册；一、项目结构：1、对项目不同文件部分做一个介绍；├─build                         // webpack开发打包相关配置 │ ├─build.js                        //">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,76 +154,219 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-如何从零搭建一个Vue项目" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      如何从零搭建一个Vue项目
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/30/如何从零搭建一个Vue项目/" class="archive-article-date">
+
+        
+        <a href="/2019/07/30/如何从零搭建一个Vue项目/" class="archive-article-date">
   	<time datetime="2019-07-30T08:44:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-30</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/30/如何从零搭建一个Vue项目/">如何从零搭建一个Vue项目</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="利用vue-cli-2-X搭建一个基本可以运行的项目；"><a href="#利用vue-cli-2-X搭建一个基本可以运行的项目；" class="headerlink" title="利用vue-cli 2.X搭建一个基本可以运行的项目；"></a>利用vue-cli 2.X搭建一个基本可以运行的项目；</h2><h2 id="vue-router建立路由；"><a href="#vue-router建立路由；" class="headerlink" title="vue-router建立路由；"></a>vue-router建立路由；</h2><h2 id="引入异步请求插件-vue-axios"><a href="#引入异步请求插件-vue-axios" class="headerlink" title="引入异步请求插件 vue-axios;"></a>引入异步请求插件 vue-axios;</h2><h2 id="引入状态管理插件vuex；"><a href="#引入状态管理插件vuex；" class="headerlink" title="引入状态管理插件vuex；"></a>引入状态管理插件vuex；</h2><h2 id="处理移动适配；"><a href="#处理移动适配；" class="headerlink" title="处理移动适配；"></a>处理移动适配；</h2><h2 id="组件注册；"><a href="#组件注册；" class="headerlink" title="组件注册；"></a>组件注册；</h2><h2 id="一、项目结构："><a href="#一、项目结构：" class="headerlink" title="一、项目结构："></a>一、项目结构：</h2><p>1、对项目不同文件部分做一个介绍；<br>├─build                         // webpack开发打包相关配置</p>
+<p>│ ├─build.js                        // 构建环境下的配置:loading动画;删除创建目标文件夹;webpack编译;输出信息</p>
+<p>│ ├─check-versions.js               // node和npm的版本检查</p>
+<p>│ ├─logo.png                        </p>
+<p>│ ├─utils.js                        // 配置静态资源路径；cssLoaders用于加载.vue文件中的样式；styleLoaders用于加载不在.vue文件中的单独存在的样式文件</p>
+<p>│ ├─vue-loader.conf.js              </p>
+<p>│ ├─webpack-base.conf.js            // 基本的webpack配置.配置webpack编译入口/webpack输出路径和命名规则/模块resolve规则/不同类型模块的处理规则</p>
+<p>│ ├─webpack-dev.conf.js             // 开发环境配置,在base.conf基础进一步完善;合并基础webpack配置;将hot-reload相关的代码添加到entry chunks;使用styleLoaders;配置Source Maps / webpack插件;</p>
+<p>│ ├─webpack-prod.conf.js            // 生产环境配置,在base.conf基础进一步完善;合并基础webpack配置;使用styleLoaders;配置webpack输出/webpack插件;gzip模式下的webpack插件配置;webpack-bundle分析</p>
+<p>├─config                        // 项目配置（端口号等）</p>
+<p>│ ├─dev.env.js                      </p>
+<p>│ ├─index.js                        // 用于定义开发环境和生产环境所需要的参数</p>
+<p>│ ├─prod.env.js                     </p>
+<p>├─dist                          // cnpm run build  项目打包后生成的文件夹</p>
+<p>├─node_modules                  // cnpm install    项目依赖模块</p>
+<p>├─src</p>
+<p>│ ├─assets                      // 资源目录（放置一些图片等），这里的资源会被webpack构建</p>
+<p>│ ├─components</p>
+<p>│ ├─router                          // 路由</p>
+<p>│ ├─App.vue                         // 根组件</p>
+<p>│ ├─main.js                         // 入口js</p>
+<p>├─static                        // 纯静态资源（不会变动的资源，如图片、字体），不会被webpack构建，直接被复制到打包目录dist/static</p>
+<p>├─.babelrc                      // 使用babel的配置文件，用来设置转码规则和插件</p>
+<p>├─.editorconfig                 // 代码的规范文件（规定使用空格或tab缩进，缩进的长度等，使用的话需要在编辑器下载对应的插件）</p>
+<p>├─.gitignore                    // 指定 git 忽略的文件，所有 git 操作均不会对其生效；</p>
+<p>├─.postcssrc.js                 // 指定使用的 css 预编译器，里面默认配置了 autoprefixer ，自动补全浏览器前缀</p>
+<p>├─index.html</p>
+<p>├─package-lock.json            // 确定当前安装的包的依赖，以便后续重新安装的时候生成相同的依赖，而忽略项目开发过程中有些依赖已经发生的更新；</p>
+<p>├─package.json                 // 项目配置文件</p>
+<p>└─README.md                    // 备注文件，对项目开发过程中需要注意的地方进行一些说明</p>
+<p>2、一般怎么在当前基础上建立一个相对合理的目录结构；</p>
+<ol>
+<li>views下放置各个页面和局部组件 </li>
+<li>components下放置项目的公共组件</li>
+<li>router放置各个页面的路由配置路径</li>
+</ol>
+<p>二、路由：</p>
+<p>1、路由如何 引入；</p>
+<ol>
+<li>Vue-cli2 构建时会自动引入路由在router文件下，它的核心就 是一个实例化的vue-router的构造函数中传入一个一个属性为routes，值为数组的对象</li>
+</ol>
+<p>2、介绍编程式导航和组件导航，以及参数如何传递；</p>
+<ol>
+<li>push方法两种不同的传参形式</li>
+<li>push方法和replace 方法的区别</li>
+</ol>
+<p>3、介绍路由守卫的应用场景</p>
+<p>三、vue-axios :</p>
+<p>1、如何引入；</p>
+<p>2、如何进行请求拦截；</p>
+<p>3、如何进行vue-axios的二次封装；</p>
+<p>四、vuex：</p>
+<p>1、如何手动引入；</p>
+<p>2、如何分模块；</p>
+<p>3、如何对状态进行获取、提交，以及辅助函数的运用</p>
+<p>五、移动适配</p>
+<p>1、待定</p>
+<p>六、组件注册：</p>
+<p>1、局部组件注册；</p>
+<p>2、全局组件注册；</p>
+<ul>
+<li>如何搭建一个vue多页面应用？</li>
+</ul>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/30/如何从零搭建一个Vue项目/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/30/hello-world/" class="archive-article-date">
-  	<time datetime="2019-07-30T07:53:21.933Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-30</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/30/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/30/hello-world/">Hello World</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -242,8 +389,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
