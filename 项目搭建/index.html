@@ -6,16 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Vue-重要的API | Hexo</title>
+  <title>项目搭建 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="Vue-重要的API">
-<meta property="og:url" content="http://yoursite.com/2019/08/15/Vue-重要的API/index.html">
+  <meta name="description" content="如何从零开始搭建一个vue项目 利用vue-cli 2.0搭建一个基本可以运行的项目； vue-router建立路由； 引入异步请求插件 vue-axios; 引入状态管理插件vuex； 如何使用webpack配置loader、server 如何配置代理; 处理移动适配； 组件注册；  项目结构： build                         // webpack开发打包相关配置│">
+<meta property="og:type" content="website">
+<meta property="og:title" content="项目搭建">
+<meta property="og:url" content="http://yoursite.com/项目搭建/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="如何从零开始搭建一个vue项目 利用vue-cli 2.0搭建一个基本可以运行的项目； vue-router建立路由； 引入异步请求插件 vue-axios; 引入状态管理插件vuex； 如何使用webpack配置loader、server 如何配置代理; 处理移动适配； 组件注册；  项目结构： build                         // webpack开发打包相关配置│">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-15T03:42:39.430Z">
+<meta property="og:updated_time" content="2019-08-16T06:48:32.687Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vue-重要的API">
+<meta name="twitter:title" content="项目搭建">
+<meta name="twitter:description" content="如何从零开始搭建一个vue项目 利用vue-cli 2.0搭建一个基本可以运行的项目； vue-router建立路由； 引入异步请求插件 vue-axios; 引入状态管理插件vuex； 如何使用webpack配置loader、server 如何配置代理; 处理移动适配； 组件注册；  项目结构： build                         // webpack开发打包相关配置│">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -151,27 +154,62 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Vue-重要的API" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Vue-重要的API
+      项目搭建
     </h1>
   
 
         
-        <a href="/2019/08/15/Vue-重要的API/" class="archive-article-date">
-  	<time datetime="2019-08-15T03:42:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-15</time>
+        <a href="/项目搭建/index.html" class="archive-article-date">
+  	<time datetime="2019-08-16T06:47:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="如何从零开始搭建一个vue项目"><a href="#如何从零开始搭建一个vue项目" class="headerlink" title="如何从零开始搭建一个vue项目"></a>如何从零开始搭建一个vue项目</h1><ul>
+<li>利用vue-cli 2.0搭建一个基本可以运行的项目；</li>
+<li>vue-router建立路由；</li>
+<li>引入异步请求插件 vue-axios;</li>
+<li>引入状态管理插件vuex；</li>
+<li>如何使用webpack配置loader、server</li>
+<li>如何配置代理;</li>
+<li>处理移动适配；</li>
+<li>组件注册；</li>
+</ul>
+<h2 id="项目结构："><a href="#项目结构：" class="headerlink" title="项目结构："></a>项目结构：</h2><ul>
+<li>build                         // webpack开发打包相关配置<br>│ ├─build.js                        // 构建环境下的配置:loading动画;删除创建目标文件夹;webpack编译;输出信息<br>│ ├─check-versions.js               // node和npm的版本检查<br>│ ├─logo.png<br>│ ├─utils.js                        // 配置静态资源路径；cssLoaders用于加载.vue文件中的样式；styleLoaders用于加载不在.vue文件中的单独存在的样式文件<br>│ ├─vue-loader.conf.js<br>│ ├─webpack-base.conf.js            // 基本的webpack配置.配置webpack编译入口/webpack输出路径和命名规则/模块resolve规则/不同类型模块的处理规则<br>│ ├─webpack-dev.conf.js             // 开发环境配置,在base.conf基础进一步完善;合并基础webpack配置;将hot-reload相关的代码添加到entry chunks;使用styleLoaders;配置Source Maps / webpack插件;<br>│ ├─webpack-prod.conf.js            // 生产环境配置,在base.conf基础进一步完善;合并基础webpack配置;使用styleLoaders;配置webpack输出/webpack插件;gzip模式下的webpack插件配置;webpack-bundle分析<br>├─config                        // 项目配置（端口号等）<br>│ ├─dev.env.js<br>│ ├─index.js                        // 用于定义开发环境和生产环境所需要的参数<br>│ ├─prod.env.js<br>├─dist                          // cnpm run build  项目打包后生成的文件夹<br>├─node_modules                  // cnpm install    项目依赖模块<br>├─src<br>│ ├─assets                      // 资源目录（放置一些图片等），这里的资源会被webpack构建<br>│ ├─components<br>│ ├─router                          // 路由<br>│ ├─App.vue                         // 根组件<br>│ ├─main.js                         // 入口js<br>├─static                        // 纯静态资源（不会变动的资源，如图片、字体），不会被webpack构建，直接被复制到打包目录dist/static</li>
+<li>.babelrc                      // 使用babel的配置文件，用来设置转码规则和插件</li>
+<li>.editorconfig                 // 代码的规范文件（规定使用空格或tab缩进，缩进的长度等，使用的话需要在编辑器下载对应的插件）</li>
+<li>.gitignore                    // 指定 git 忽略的文件，所有 git 操作均不会对其生效；</li>
+<li>.postcssrc.js                 // 指定使用的 css 预编译器，里面默认配置了 autoprefixer ，自动补全浏览器前缀<br>├─index.html<br>├─package-lock.json            // 确定当前安装的包的依赖，以便后续重新安装的时候生成相同的依赖，而忽略项目开发过程中有些依赖已经发生的更新；<br>├─package.json                 // 项目配置文件<br>└─README.md                    // 备注文件，对项目开发过程中需要注意的地方进行一些说明</li>
+</ul>
+<h2 id="一般怎么在当前基础上建立一个相对合理的目录结构；"><a href="#一般怎么在当前基础上建立一个相对合理的目录结构；" class="headerlink" title="一般怎么在当前基础上建立一个相对合理的目录结构；"></a>一般怎么在当前基础上建立一个相对合理的目录结构；</h2><h3 id="views下放置各个页面和局部组件"><a href="#views下放置各个页面和局部组件" class="headerlink" title="views下放置各个页面和局部组件"></a>views下放置各个页面和局部组件</h3><h3 id="components下放置项目的公共组件"><a href="#components下放置项目的公共组件" class="headerlink" title="components下放置项目的公共组件"></a>components下放置项目的公共组件</h3><h3 id="router放置各个页面的路由配置路径"><a href="#router放置各个页面的路由配置路径" class="headerlink" title="router放置各个页面的路由配置路径"></a>router放置各个页面的路由配置路径</h3><h2 id="路由："><a href="#路由：" class="headerlink" title="路由："></a>路由：</h2><h3 id="路由如何引入"><a href="#路由如何引入" class="headerlink" title="路由如何引入"></a>路由如何引入</h3><p>Vue-cli2 构建时会自动引入路由在router文件下，它的核心就是一个实例化的vue-router的构造函数中传入一个一个属性为routes，值为数组的对象</p>
+<h3 id="编程式导航和组件导航，以及参数如何传递；"><a href="#编程式导航和组件导航，以及参数如何传递；" class="headerlink" title="编程式导航和组件导航，以及参数如何传递；"></a>编程式导航和组件导航，以及参数如何传递；</h3><h4 id="push方法两种不同的传参形式"><a href="#push方法两种不同的传参形式" class="headerlink" title="push方法两种不同的传参形式"></a>push方法两种不同的传参形式</h4><h4 id="push方法和replace-方法的区别"><a href="#push方法和replace-方法的区别" class="headerlink" title="push方法和replace 方法的区别"></a>push方法和replace 方法的区别</h4><h3 id="介绍路由守卫的应用场景"><a href="#介绍路由守卫的应用场景" class="headerlink" title="介绍路由守卫的应用场景"></a>介绍路由守卫的应用场景</h3><h2 id="vue-axios"><a href="#vue-axios" class="headerlink" title="vue-axios :"></a>vue-axios :</h2><h3 id="引入；"><a href="#引入；" class="headerlink" title="引入；"></a>引入；</h3>   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span></span><br><span class="line">然后挂载在vue的原型或者<span class="built_in">window</span>对象上，然后就可以进行二次封装。</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建axios实例；"><a href="#创建axios实例；" class="headerlink" title="创建axios实例；"></a>创建axios实例；</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> instance = axios.create(&#123;</span><br><span class="line">  baseURL: <span class="string">'https://some-domain.com/api/'</span>,</span><br><span class="line">  timeout: <span class="number">1000</span>,</span><br><span class="line">  headers: &#123;</span><br><span class="line">    <span class="string">"Content-Type"</span>: <span class="string">"application/json;charset=UTF-8"</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">baseURL  配置后每一个请求前就会自动加上这个地址,这就是服务器所在地址；</span><br><span class="line">timeout  代表的是最长可持续请求的时间，如果在<span class="number">1000</span>毫秒内请求还没有返回，那么本地就会断开</span><br><span class="line">         https的🔗</span><br><span class="line">headers  服务端通常是根据请求头（headers）中的 Content-Type 字段来获知请求中的消息主体是用何种方式编码，再对主体进行解析</span><br><span class="line">application/json 这个 Content-Type 作为响应头大家肯定不陌生。实际上，现在越来越多的人把它作为请求头，用来告诉服务端消息主体是序列化后的 <span class="built_in">JSON</span> 字符串。</span><br></pre></td></tr></table></figure>
+
+<h3 id="如何进行请求拦截"><a href="#如何进行请求拦截" class="headerlink" title="如何进行请求拦截"></a>如何进行请求拦截</h3><p>请求前：<br>   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> axios.interceptors.request.use(<span class="function"><span class="keyword">function</span> (<span class="params">config</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Do something before request is sent </span></span><br><span class="line">  <span class="keyword">return</span> config;</span><br><span class="line">&#125;, <span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Do something with request error</span></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>  请求后：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">axios.interceptors.response.use(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// Do something with response data</span></span><br><span class="line">    <span class="keyword">return</span> response;</span><br><span class="line">  &#125;, <span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// Do something with response error</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="如何进行vue-axios的二次封装；"><a href="#如何进行vue-axios的二次封装；" class="headerlink" title="如何进行vue-axios的二次封装；"></a>如何进行vue-axios的二次封装；</h3><h3 id="高级用法——执行多个并发请求："><a href="#高级用法——执行多个并发请求：" class="headerlink" title="高级用法——执行多个并发请求："></a>高级用法——执行多个并发请求：</h3>   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUserAccount</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> axios.get(<span class="string">'/user/12345'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">getUserPermissions</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> axios.get(<span class="string">'/user/12345/permissions'</span>);</span><br><span class="line">&#125;</span><br><span class="line">axios.all([getUserAccount(), getUserPermissions()])</span><br><span class="line">.then(axios.spread(<span class="function"><span class="keyword">function</span> (<span class="params">acct, perms</span>) </span>&#123;</span><br><span class="line"> <span class="comment">// Both requests are now complete</span></span><br><span class="line"> &#125;));</span><br></pre></td></tr></table></figure>
+
+<h2 id="vuex："><a href="#vuex：" class="headerlink" title="vuex："></a>vuex：</h2><h3 id="如何手动引入"><a href="#如何手动引入" class="headerlink" title="如何手动引入"></a>如何手动引入</h3>   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm安装，在src目录下建立一个store文件夹，store下有一个统一的index.js来统一引入各个模块，</span><br><span class="line">并且通过<span class="keyword">new</span> Vuex.Store（&#123;moduleA,moduleB&#125;）来进行实例化，然后导出</span><br></pre></td></tr></table></figure>
+
+<h3 id="如何分模块；"><a href="#如何分模块；" class="headerlink" title="如何分模块；"></a>如何分模块；</h3>   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在store下建立存在不通模块的文件夹</span><br><span class="line">在每个文件下建立一个.js 的脚本文件，在里面<span class="keyword">export</span> <span class="keyword">default</span>&#123;<span class="attr">state</span>:&#123;&#125;,<span class="attr">mutations</span>:&#123;&#125;,<span class="attr">getters</span>:&#123;&#125;,<span class="attr">actions</span>:&#123;&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="如何对状态进行获取、提交，以及辅助函数的运用"><a href="#如何对状态进行获取、提交，以及辅助函数的运用" class="headerlink" title="如何对状态进行获取、提交，以及辅助函数的运用"></a>如何对状态进行获取、提交，以及辅助函数的运用</h3>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">首先在组件内引入mapMutations、mapState、mapActions 等</span><br><span class="line"></span><br><span class="line">computed 里面引入mapState,methods里面引入mapMutatons</span><br><span class="line">如果不采用辅助函数，</span><br><span class="line"><span class="keyword">this</span>.$store.state.module.status;<span class="keyword">this</span>.$store.commit(<span class="string">'module/methodName'</span>,status)</span><br><span class="line"> </span><br><span class="line">actions可以建立一个写入全局的异步请求方法，并且第一个参数是可选的，如果要在请求成功后去提交mutation，那么第一个参数&#123;commit,state&#125;;</span><br><span class="line">mapActions的使用方法和mapMutations基本一致</span><br><span class="line"></span><br><span class="line">mapGetters的使用方法类似mapMutations，第一个参数是可选的命名空间，第二个是一个数组，里面是getters里面的方法名</span><br></pre></td></tr></table></figure>
+
+<p>五、移动适配<br>1、待定<br>六、组件注册：<br>1、局部组件注册；<br>2、全局组件注册；</p>
+
       
 
       
@@ -250,7 +288,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/15/Vue-重要的API/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/项目搭建/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -312,7 +350,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
